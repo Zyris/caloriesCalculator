@@ -1,2 +1,2 @@
 # caloriesCalculator
-Telegram-bot based application for calculating calories
+Telegram-bot based Spring Boot application for calculating calories
