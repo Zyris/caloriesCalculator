@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "dictionary")
 @Data
-public class Dictionary {
+public class DictionaryPostgreEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
