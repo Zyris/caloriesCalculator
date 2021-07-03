@@ -2,8 +2,7 @@ package com.zyris.calorisecalculator.service;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
-import com.pengrad.telegrambot.request.SendGame;
-import com.zyris.calorisecalculator.dao.CaloriesRepository;
+import com.pengrad.telegrambot.request.SendMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,16 +10,17 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TelegramBotService {
     private final TelegramBot telegramBot;
-    private final CaloriesRepository caloriesRepository;
-
+    private final UpdateMessageResolver updateOperationResolver;
 
     public void run() {
         telegramBot.setUpdatesListener(updates -> {
-            System.out.println(updates);
-            long chatId = updates.get(0).message().chat().id();
-            System.out.println(caloriesRepository.findById(1));
+            updates.forEach(update -> {
+                System.out.println(update.message().text());
+                String message = updateOperationResolver.resolve(update);
+                long chatId = update.message().chat().id();
+                telegramBot.execute(new SendMessage(chatId, message));
+            });
             return UpdatesListener.CONFIRMED_UPDATES_ALL;
         });
     }
-
 }
