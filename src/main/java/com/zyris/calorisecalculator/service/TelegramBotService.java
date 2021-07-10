@@ -3,6 +3,7 @@ package com.zyris.calorisecalculator.service;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.request.SendMessage;
+import com.zyris.calorisecalculator.exception.ProductNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,16 @@ public class TelegramBotService {
 
     public void run() {
         telegramBot.setUpdatesListener(updates -> {
+
+            System.out.println(updates);
             updates.forEach(update -> {
-                System.out.println(update.message().text());
-                String message = updateOperationResolver.resolve(update);
                 long chatId = update.message().chat().id();
-                telegramBot.execute(new SendMessage(chatId, message));
+                try {
+                    String message = updateOperationResolver.resolve(update);
+                    telegramBot.execute(new SendMessage(chatId, message));
+                } catch (ProductNotFoundException ex) {
+                    telegramBot.execute(new SendMessage(chatId, ex.getMessage()));
+                }
             });
             return UpdatesListener.CONFIRMED_UPDATES_ALL;
         });
