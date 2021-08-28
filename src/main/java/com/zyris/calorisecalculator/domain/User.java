@@ -10,13 +10,13 @@ import java.util.Map;
 @Data
 @Accessors(chain = true)
 @RequiredArgsConstructor
-public class UserState {
+public class User {
     private final Integer userId;
-    private Status status;
+    private Status status = Status.NONE;
     private Map<String, Operation> operationMap;
 
     public enum Status {
-        NONE, NEED_EXTRA_INFO;
+        NONE, NEED_EXTRA_INFO
     }
 
 }
