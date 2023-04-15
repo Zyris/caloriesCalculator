@@ -1,10 +1,10 @@
 package com.zyris.calorisecalculator.persistance.entity.keys;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -13,6 +13,6 @@ import java.time.LocalDate;
 @Accessors(chain = true)
 public class UserRationKey implements Serializable {
     @Column(name = "id_person")
-    private Integer idPerson;
+    private Long idPerson;
     private LocalDate day;
 }

@@ -8,9 +8,9 @@ import java.util.Map;
 
 @Service
 public class UserResolver {
-    private Map<Integer, User> mapOfExistingUsers = new HashMap<>();
+    private Map<Long, User> mapOfExistingUsers = new HashMap<>();
 
-    public User resolve(Integer userId) {
+    public User resolve(Long userId) {
         if (!mapOfExistingUsers.containsKey(userId)) {
             mapOfExistingUsers.put(userId, new User(userId));
         }

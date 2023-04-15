@@ -54,7 +54,7 @@ public class CommonTextParserAndSave {
 
     }
 
-    private String checkAndSave(Integer productId, Integer weight, Integer idPerson) {
+    private String checkAndSave(Integer productId, Integer weight, Long idPerson) {
         UserRationPostgreEntity byIdProductAndDay = userRationRepository.findByIdProductAndKeyDay_Day(productId, LocalDate.now())
                 .map(s -> s.setWeight(s.getWeight() + weight))
                 .orElseGet(() -> new UserRationPostgreEntity()

@@ -1,13 +1,12 @@
 package com.zyris.calorisecalculator.persistance.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "profiles")
@@ -17,11 +16,11 @@ import javax.persistence.Table;
 public class ProfilesPostgreEntity {
     @Id
     @Column(name = "id_person")
-    private Integer idPerson;
+    private Long idPerson;
     @Column(name = "id_chat")
     private Long idChat;
 
-    public ProfilesPostgreEntity(Integer idPerson, Long idChat) {
+    public ProfilesPostgreEntity(Long idPerson, Long idChat) {
         this.idPerson = idPerson;
         this.idChat = idChat;
     }

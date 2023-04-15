@@ -25,7 +25,7 @@ public class UpdateMessageResolver {
     }
 
     public String resolve(Update update) {
-        Integer userId = update.message().from().id();
+        Long userId = update.message().from().id();
         User user = userResolver.resolve(userId);
 
         if (user.getStatus().equals(User.Status.NEED_EXTRA_INFO)) {

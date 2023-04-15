@@ -1,9 +1,9 @@
 package com.zyris.calorisecalculator.persistance.entity;
 
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Data
 public class DictionaryPostgreEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(name = "product_name")
     String productName;

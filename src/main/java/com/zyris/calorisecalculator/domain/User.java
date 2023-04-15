@@ -11,7 +11,7 @@ import java.util.Map;
 @Accessors(chain = true)
 @RequiredArgsConstructor
 public class User {
-    private final Integer userId;
+    private final Long userId;
     private Status status = Status.NONE;
     private Map<String, Operation> operationMap;
 

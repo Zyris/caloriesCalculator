@@ -1,13 +1,12 @@
 package com.zyris.calorisecalculator.persistance.entity;
 
 import com.zyris.calorisecalculator.persistance.entity.keys.UserRationKey;
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.experimental.Accessors;
-
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "user_ration")

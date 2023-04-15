@@ -4,11 +4,13 @@ import com.zyris.calorisecalculator.service.TelegramBotService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-public class MainClass {
+@EnableJpaRepositories
+public class MainApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(MainClass.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
 
         context.getBean(TelegramBotService.class).run();
     }
