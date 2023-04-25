@@ -7,13 +7,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.5</version>
     </parent>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <postgre.version>6.2.1.Final</postgre.version>
+        <hibernate.version>6.2.1.Final</hibernate.version>
+        <telegram.bot.version>6.5.0</telegram.bot.version>
     </properties>
 
     <groupId>org.example</groupId>
@@ -41,7 +42,7 @@
         <dependency>
             <groupId>com.github.pengrad</groupId>
             <artifactId>java-telegram-bot-api</artifactId>
-            <version>6.5.0</version>
+            <version>${telegram.bot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -54,7 +55,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>${postgre.version}</version>
+            <version>${hibernate.version}</version>
         </dependency>
 
 
