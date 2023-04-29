@@ -2,17 +2,15 @@ package com.zyris.calorisecalculator.service;
 
 import com.pengrad.telegrambot.model.Update;
 import com.zyris.calorisecalculator.domain.User;
-import com.zyris.calorisecalculator.service.operator.CommandOperator;
+import com.zyris.calorisecalculator.service.command.CommandChooser;
 import com.zyris.calorisecalculator.service.parser.CommonTextParserAndSave;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 @RequiredArgsConstructor
 public class UpdateMessageResolver {
-    private final CommandService commandService;
+    private final CommandChooser commandChooser;
     private final CommonTextParserAndSave commonTextParserAndSave;
     private final UserResolver userResolver;
 
@@ -26,7 +24,8 @@ public class UpdateMessageResolver {
             return user.getOperationMap().get(update.message().text()).operate();
         }
         if (isCommand(update.message().text()))
-            return commandService.apply(update);
+            return commandChooser.chooseCommand(update.message().text())
+                    .apply(update);
 
         else return commonTextParserAndSave.operateUserAndHisMessage(user, update);
     }

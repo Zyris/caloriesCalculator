@@ -1,7 +1,7 @@
-package com.zyris.calorisecalculator.service.operator.impl;
+package com.zyris.calorisecalculator.service.command.impl;
 
 import com.pengrad.telegrambot.model.Update;
-import com.zyris.calorisecalculator.service.operator.CommandOperator;
+import com.zyris.calorisecalculator.service.command.CommandOperator;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;

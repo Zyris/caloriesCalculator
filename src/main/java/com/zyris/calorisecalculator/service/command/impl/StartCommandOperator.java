@@ -1,9 +1,9 @@
-package com.zyris.calorisecalculator.service.operator.impl;
+package com.zyris.calorisecalculator.service.command.impl;
 
 import com.pengrad.telegrambot.model.Update;
 import com.zyris.calorisecalculator.dao.ProfilesRepository;
 import com.zyris.calorisecalculator.persistance.entity.ProfilesPostgreEntity;
-import com.zyris.calorisecalculator.service.operator.CommandOperator;
+import com.zyris.calorisecalculator.service.command.CommandOperator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

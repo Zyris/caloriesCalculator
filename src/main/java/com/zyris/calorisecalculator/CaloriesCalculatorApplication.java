@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-public class MainApplication {
+public class CaloriesCalculatorApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(CaloriesCalculatorApplication.class, args);
 
         context.getBean(TelegramBotService.class).run();
     }

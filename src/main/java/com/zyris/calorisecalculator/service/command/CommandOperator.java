@@ -1,4 +1,4 @@
-package com.zyris.calorisecalculator.service.operator;
+package com.zyris.calorisecalculator.service.command;
 
 import com.pengrad.telegrambot.model.Update;
 
