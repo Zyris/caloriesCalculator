@@ -1,6 +1,6 @@
 package com.zyris.calorisecalculator.service.command.impl;
 
-import com.pengrad.telegrambot.model.Update;
+import com.zyris.calorisecalculator.domain.TelegramMessage;
 import com.zyris.calorisecalculator.service.command.CommandOperator;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +21,7 @@ public class DefaultNotExistCommandOperator extends CommandOperator {
     }
 
     @Override
-    public String apply(Update update) {
+    public String apply(TelegramMessage telegramMessage) {
         return "Use /help to see command list";
     }
 }

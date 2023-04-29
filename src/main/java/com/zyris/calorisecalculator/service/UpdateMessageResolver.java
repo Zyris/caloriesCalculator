@@ -1,6 +1,7 @@
 package com.zyris.calorisecalculator.service;
 
 import com.pengrad.telegrambot.model.Update;
+import com.zyris.calorisecalculator.domain.TelegramMessage;
 import com.zyris.calorisecalculator.domain.User;
 import com.zyris.calorisecalculator.service.command.CommandChooser;
 import com.zyris.calorisecalculator.service.parser.CommonTextParserAndSave;
@@ -15,19 +16,18 @@ public class UpdateMessageResolver {
     private final UserResolver userResolver;
 
 
-    public String resolve(Update update) {
-        Long userId = update.message().from().id();
-        User user = userResolver.resolve(userId);
+    public String resolve(TelegramMessage telegramMessage) {
+        User user = userResolver.resolve(telegramMessage.getUserId());
 
         if (user.getStatus().equals(User.Status.NEED_EXTRA_INFO)) {
             user.setStatus(User.Status.NONE);
-            return user.getOperationMap().get(update.message().text()).operate();
+            return user.getOperationMap().get(telegramMessage.getText()).operate();
         }
-        if (isCommand(update.message().text()))
-            return commandChooser.chooseCommand(update.message().text())
-                    .apply(update);
+        if (isCommand(telegramMessage.getText()))
+            return commandChooser.chooseCommand(telegramMessage.getText())
+                    .apply(telegramMessage);
 
-        else return commonTextParserAndSave.operateUserAndHisMessage(user, update);
+        else return commonTextParserAndSave.operateUserAndHisMessage(user, telegramMessage);
     }
 
     private Boolean isCommand(String message) {

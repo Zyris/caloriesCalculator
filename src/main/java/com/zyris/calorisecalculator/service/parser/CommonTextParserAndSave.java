@@ -4,6 +4,7 @@ import com.pengrad.telegrambot.model.Update;
 import com.zyris.calorisecalculator.dao.DictionaryRepository;
 import com.zyris.calorisecalculator.dao.UserRationRepository;
 import com.zyris.calorisecalculator.domain.Message;
+import com.zyris.calorisecalculator.domain.TelegramMessage;
 import com.zyris.calorisecalculator.domain.User;
 import com.zyris.calorisecalculator.exception.ProductNotFoundException;
 import com.zyris.calorisecalculator.persistance.entity.DictionaryPostgreEntity;
@@ -23,8 +24,8 @@ public class CommonTextParserAndSave {
     private final DictionaryRepository dictionaryRepository;
     private final UserRationRepository userRationRepository;
 
-    public String operateUserAndHisMessage(User user, Update update) {
-        Message message = Message.from(update.message().text());
+    public String operateUserAndHisMessage(User user, TelegramMessage telegramMessage) {
+        Message message = Message.from(telegramMessage.getText());//todo refactoring
 
         List<DictionaryPostgreEntity> finedProductByPartOfName = dictionaryRepository.findByProductNameContainingIgnoreCase(message.getProductName());
 
