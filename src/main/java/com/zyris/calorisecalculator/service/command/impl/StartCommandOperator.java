@@ -23,8 +23,8 @@ public class StartCommandOperator extends CommandOperator {
     @Override
     public String apply(TelegramMessage telegramMessage) {
         profilesRepository.save(ProfilesPostgreEntity.builder()
-                .idPerson(telegramMessage.getUserId())
-                .idChat(telegramMessage.getChatId())
+                .idPerson(telegramMessage.userId())
+                .idChat(telegramMessage.chatId())
                 .build());
         return "Hi! \nType /help to see command list";
     }

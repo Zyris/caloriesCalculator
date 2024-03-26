@@ -1,19 +1,11 @@
 package com.zyris.calorisecalculator.domain;
 
-import com.pengrad.telegrambot.model.Update;
+import lombok.Builder;
 import lombok.Getter;
 
-@Getter
-public class TelegramMessage {
-    private String text;
-    private Long userId;
-    private Long chatId;
-
-    public static TelegramMessage from(Update update) {
-        TelegramMessage telegramMessage = new TelegramMessage();
-        telegramMessage.text = update.message().text();
-        telegramMessage.userId = update.message().from().id();
-        telegramMessage.chatId = update.message().chat().id();
-        return telegramMessage;
+@Builder
+public record TelegramMessage(String text, Long userId, Long chatId) {
+    public boolean isCommand() {
+        return text.startsWith("/");
     }
 }

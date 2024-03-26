@@ -25,7 +25,7 @@ public class CommonTextParserAndSave {
     private final UserRationRepository userRationRepository;
 
     public String operateUserAndHisMessage(User user, TelegramMessage telegramMessage) {
-        Message message = Message.from(telegramMessage.getText());//todo refactoring
+        Message message = Message.from(telegramMessage.text());//todo refactoring
 
         List<DictionaryPostgreEntity> finedProductByPartOfName = dictionaryRepository.findByProductNameContainingIgnoreCase(message.getProductName());
 
