@@ -1,5 +1,6 @@
 package com.zyris.calorisecalculator.service;
 
+import com.zyris.calorisecalculator.domain.ResponseContext;
 import com.zyris.calorisecalculator.domain.TelegramMessage;
 import com.zyris.calorisecalculator.domain.User;
 import com.zyris.calorisecalculator.service.command.CommandChooser;
@@ -15,16 +16,16 @@ public class UpdateMessageResolver {
     private final UserResolver userResolver;
 
 
-    public String resolve(TelegramMessage telegramMessage) {
-        User user = userResolver.resolve(telegramMessage.userId());
+    public ResponseContext resolve(TelegramMessage telegramMessage) {
+        User user = userResolver.resolve(telegramMessage.userId());//todo do we really need this?
 
         if (user.getStatus().equals(User.Status.NEED_EXTRA_INFO)) {
             user.setStatus(User.Status.NONE);
-            return user.getOperationMap().get(telegramMessage.text()).operate();
+            return new ResponseContext(user.getOperationMap().get(telegramMessage.text()).operate().getMessage());
         }
         if (telegramMessage.isCommand())
-            return commandChooser.chooseCommand(telegramMessage.text())
-                    .apply(telegramMessage);
+            return new ResponseContext(commandChooser.chooseCommand(telegramMessage.text())
+                    .apply(telegramMessage).getMessage());
         else return commonTextParserAndSave.operateUserAndHisMessage(user, telegramMessage);
     }
 

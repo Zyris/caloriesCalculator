@@ -12,8 +12,8 @@ import java.util.Set;
 
 @Component
 @RequiredArgsConstructor
-public class StartCommandOperator extends CommandOperator {
-    private static final Set<String> ALLOWED_TYPES = Set.of("/start");
+public class EatProductCommandOperator extends CommandOperator {
+    private static final Set<String> ALLOWED_TYPES = Set.of("/ep");
     private final ProfilesDAO profilesDAO;
 
     @Override
@@ -32,6 +32,6 @@ public class StartCommandOperator extends CommandOperator {
 
     @Override
     public String description() {
-        return "Should not be seen";
+        return "Add eaten product";
     }
 }

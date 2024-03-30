@@ -1,5 +1,6 @@
 package com.zyris.calorisecalculator.service.command.impl;
 
+import com.zyris.calorisecalculator.domain.OperationContext;
 import com.zyris.calorisecalculator.domain.TelegramMessage;
 import com.zyris.calorisecalculator.service.command.CommandOperator;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,12 @@ public class HelpCommandOperator extends CommandOperator {
     }
 
     @Override
-    public String apply(TelegramMessage telegramMessage) {
-        return "not yet implemented";
+    public OperationContext apply(TelegramMessage telegramMessage) {
+        return new OperationContext("not yet implemented");
+    }
+
+    @Override
+    public String description() {
+        return "Show help information";
     }
 }

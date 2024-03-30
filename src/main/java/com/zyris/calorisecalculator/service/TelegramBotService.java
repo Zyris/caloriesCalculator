@@ -3,6 +3,7 @@ package com.zyris.calorisecalculator.service;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.request.SendMessage;
+import com.zyris.calorisecalculator.domain.ResponseContext;
 import com.zyris.calorisecalculator.exception.IllegalArgumentException;
 import com.zyris.calorisecalculator.exception.ProductNotFoundException;
 import com.zyris.calorisecalculator.service.adapters.UpdateToMessageAdapter;
@@ -25,8 +26,8 @@ public class TelegramBotService {
                             .map(updateToMessageAdapter::map)
                             .forEach(telegramMessage -> {
                                 try {
-                                    String message = updateOperationResolver.resolve(telegramMessage);
-                                    telegramBot.execute(new SendMessage(telegramMessage.chatId(), message));
+                                    ResponseContext context = updateOperationResolver.resolve(telegramMessage);
+                                    telegramBot.execute(new SendMessage(telegramMessage.chatId(), context.message()));
                                 } catch (ProductNotFoundException | IllegalArgumentException ex) {
                                     telegramBot.execute(new SendMessage(telegramMessage.chatId(), ex.getMessage()));
                                 }

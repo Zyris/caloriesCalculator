@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @Data
-public class ProfilesPostgreEntity {
+public class ProfilesPostgresEntity {
     @Id
     @Column(name = "id_person")
     private Long idPerson;
     @Column(name = "id_chat")
     private Long idChat;
 
-    public ProfilesPostgreEntity(Long idPerson, Long idChat) {
+    public ProfilesPostgresEntity(Long idPerson, Long idChat) {
         this.idPerson = idPerson;
         this.idChat = idChat;
     }

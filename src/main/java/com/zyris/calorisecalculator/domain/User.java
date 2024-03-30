@@ -1,6 +1,6 @@
 package com.zyris.calorisecalculator.domain;
 
-import com.zyris.calorisecalculator.service.operation.Operation;
+import com.zyris.calorisecalculator.service.command.operation.Operation;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;

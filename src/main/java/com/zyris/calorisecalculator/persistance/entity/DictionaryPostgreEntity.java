@@ -14,17 +14,17 @@ public class DictionaryPostgreEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(name = "product_name")
-    String productName;
+    private String productName;
     @Column
-    BigDecimal calories;
+    private BigDecimal calories;
     @Column
-    BigDecimal n;
+    private BigDecimal n;
     @Column
-    BigDecimal f;
+    private BigDecimal f;
     @Column
-    BigDecimal c;
+    private BigDecimal c;
     @Column
-    String description;
+    private String description;
 }
 
 

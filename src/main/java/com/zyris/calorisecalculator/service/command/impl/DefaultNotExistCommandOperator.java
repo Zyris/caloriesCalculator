@@ -1,5 +1,6 @@
 package com.zyris.calorisecalculator.service.command.impl;
 
+import com.zyris.calorisecalculator.domain.OperationContext;
 import com.zyris.calorisecalculator.domain.TelegramMessage;
 import com.zyris.calorisecalculator.service.command.CommandOperator;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,12 @@ public class DefaultNotExistCommandOperator extends CommandOperator {
     }
 
     @Override
-    public String apply(TelegramMessage telegramMessage) {
-        return "Use /help to see command list";
+    public OperationContext apply(TelegramMessage telegramMessage) {
+        return new OperationContext("Use /help to see command list");
+    }
+
+    @Override
+    public String description() {
+        return "delete maybe this type of command?";
     }
 }

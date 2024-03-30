@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
 @Table(name = "user_ration")
 @Data
 @Accessors(chain = true)
-public class UserRationPostgreEntity {
+public class UserRationPostgresEntity {
     @EmbeddedId
     private UserRationKey key;
     @Column(name = "id_product")
