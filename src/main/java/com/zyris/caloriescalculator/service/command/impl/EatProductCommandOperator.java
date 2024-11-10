@@ -1,6 +1,6 @@
 package com.zyris.caloriescalculator.service.command.impl;
 
-import com.zyris.caloriescalculator.dao.UserModeDAO;
+import com.zyris.caloriescalculator.repository.UserModeDAO;
 import com.zyris.caloriescalculator.domain.OperationContext;
 import com.zyris.caloriescalculator.domain.TelegramMessage;
 import com.zyris.caloriescalculator.service.command.CommandOperator;

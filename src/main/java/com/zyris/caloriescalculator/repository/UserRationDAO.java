@@ -1,4 +1,4 @@
-package com.zyris.caloriescalculator.dao;
+package com.zyris.caloriescalculator.repository;
 
 import com.zyris.caloriescalculator.domain.dao.UserRation;
 

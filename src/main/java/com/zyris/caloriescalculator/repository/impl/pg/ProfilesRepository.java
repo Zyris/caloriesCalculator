@@ -1,6 +1,6 @@
-package com.zyris.caloriescalculator.dao.impl.pg;
+package com.zyris.caloriescalculator.repository.impl.pg;
 
-import com.zyris.caloriescalculator.dao.ProfilesDAO;
+import com.zyris.caloriescalculator.repository.ProfilesDAO;
 import com.zyris.caloriescalculator.domain.dao.Profile;
 import com.zyris.caloriescalculator.persistance.entity.ProfilesPostgresEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

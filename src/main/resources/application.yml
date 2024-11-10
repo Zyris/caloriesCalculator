@@ -1,0 +1,19 @@
+telegram:
+  bot:
+    token: "1854646211:AAFMPj_Wtems3FuzYw4NpiUSCyAUNT7rCb0" #@calories_calculator_zyris_bot
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/mydatabase"
+    username: "myuser"
+    password: "mypassword"
+    driver-class-name: "org.postgresql.Driver"
+  jpa:
+    database: postgresql
+    database-platform: "org.hibernate.dialect.PostgreSQL10Dialect"
+
+logging:
+  level:
+    com:
+      zyris:
+        caloriescalculator: DEBUG

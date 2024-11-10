@@ -1,9 +1,9 @@
 package com.zyris.caloriescalculator.service.parser;
 
-import com.zyris.caloriescalculator.dao.DictionaryDAO;
-import com.zyris.caloriescalculator.dao.UserModeDAO;
-import com.zyris.caloriescalculator.dao.UserOptionsDAO;
-import com.zyris.caloriescalculator.dao.UserRationDAO;
+import com.zyris.caloriescalculator.repository.DictionaryDAO;
+import com.zyris.caloriescalculator.repository.UserModeDAO;
+import com.zyris.caloriescalculator.repository.UserOptionsDAO;
+import com.zyris.caloriescalculator.repository.UserRationDAO;
 import com.zyris.caloriescalculator.domain.*;
 import com.zyris.caloriescalculator.domain.dao.Product;
 import com.zyris.caloriescalculator.domain.dao.UserRation;

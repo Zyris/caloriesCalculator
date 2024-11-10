@@ -1,6 +1,6 @@
-package com.zyris.caloriescalculator.dao.impl.memory;
+package com.zyris.caloriescalculator.repository.impl.memory;
 
-import com.zyris.caloriescalculator.dao.UserOptionsDAO;
+import com.zyris.caloriescalculator.repository.UserOptionsDAO;
 import com.zyris.caloriescalculator.service.command.operation.Operation;
 import org.springframework.stereotype.Repository;
 

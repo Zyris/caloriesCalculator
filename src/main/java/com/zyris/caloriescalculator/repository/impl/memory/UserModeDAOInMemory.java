@@ -1,6 +1,6 @@
-package com.zyris.caloriescalculator.dao.impl.memory;
+package com.zyris.caloriescalculator.repository.impl.memory;
 
-import com.zyris.caloriescalculator.dao.UserModeDAO;
+import com.zyris.caloriescalculator.repository.UserModeDAO;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

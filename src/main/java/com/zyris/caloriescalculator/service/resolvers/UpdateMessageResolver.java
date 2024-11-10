@@ -1,8 +1,8 @@
 package com.zyris.caloriescalculator.service.resolvers;
 
-import com.zyris.caloriescalculator.dao.UserModeDAO;
-import com.zyris.caloriescalculator.dao.UserOptionsDAO;
-import com.zyris.caloriescalculator.dao.impl.memory.UserModeDAOInMemory;
+import com.zyris.caloriescalculator.repository.UserModeDAO;
+import com.zyris.caloriescalculator.repository.UserOptionsDAO;
+import com.zyris.caloriescalculator.repository.impl.memory.UserModeDAOInMemory;
 import com.zyris.caloriescalculator.domain.OperationContext;
 import com.zyris.caloriescalculator.domain.ResponseContext;
 import com.zyris.caloriescalculator.domain.TelegramMessage;

@@ -15,6 +15,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <hibernate.version>6.2.1.Final</hibernate.version>
         <telegram.bot.version>7.1.1</telegram.bot.version>
+        <liqubase.version>4.30.0</liqubase.version>
     </properties>
 
     <groupId>org.example</groupId>
@@ -56,6 +57,11 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liqubase.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

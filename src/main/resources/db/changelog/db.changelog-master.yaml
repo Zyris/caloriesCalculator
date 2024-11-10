@@ -1,0 +1,89 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: zyris
+      changes:
+        - createTable:
+            tableName: user_ration
+            columns:
+              - column:
+                  name: id_person
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: day
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_product
+                  type: integer
+                  constraints:
+                    nullable: true
+              - column:
+                  name: weight
+                  type: integer
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 2
+      author: zyris
+      changes:
+        - createTable:
+            tableName: profiles
+            columns:
+              - column:
+                  name: id_person
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_chat
+                  type: bigint
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 3
+      author: zyris
+      changes:
+        - createTable:
+            tableName: dictionary
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: product_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: calories
+                  type: real
+                  constraints:
+                    nullable: true
+              - column:
+                  name: n
+                  type: real
+                  constraints:
+                    nullable: true
+              - column:
+                  name: f
+                  type: real
+                  constraints:
+                    nullable: true
+              - column:
+                  name: c
+                  type: real
+                  constraints:
+                    nullable: true
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: true

@@ -1,4 +1,4 @@
-package com.zyris.caloriescalculator.dao;
+package com.zyris.caloriescalculator.repository;
 
 public interface UserModeDAO {
     void setUserMode(Long idPerson, Mode mode);
