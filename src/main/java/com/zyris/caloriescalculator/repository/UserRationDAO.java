@@ -3,6 +3,7 @@ package com.zyris.caloriescalculator.repository;
 import com.zyris.caloriescalculator.domain.dao.UserRation;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 public interface UserRationDAO {
@@ -11,5 +12,5 @@ public interface UserRationDAO {
 
     UserRation save(UserRation userRation);
 
-    Optional<UserRation> findByUserIdAndDay(Long idPerson, LocalDate day);
+    List<UserRation> findByUserIdAndDay(Long idPerson, LocalDate day);
 }

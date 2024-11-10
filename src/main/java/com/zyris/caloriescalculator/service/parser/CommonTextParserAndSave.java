@@ -33,8 +33,6 @@ public class CommonTextParserAndSave {
             throw new ProductNotFoundException("Nothing found by " + message.getProductName() + " keyword, try again");
         }
 
-
-
         userOptionsDAO.setUserOptions(telegramMessage.userId(),
                 IntStream.range(0, finedProductByPartOfName.size())
                         .boxed()

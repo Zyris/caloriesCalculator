@@ -15,4 +15,5 @@ public class UserRationKey implements Serializable {
     @Column(name = "id_person")
     private Long idPerson;
     private LocalDate day;
+    private Integer idProduct;
 }

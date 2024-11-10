@@ -87,3 +87,37 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: true
+  - changeSet:
+      id: 4
+      author: zyris
+      changes:
+        - createSequence:
+            sequenceName: dictionary_id_seq
+            startValue: 1
+        - addDefaultValue:
+            tableName: dictionary
+            columnName: id
+            defaultValueSequenceNext: dictionary_id_seq
+
+  - changeSet:
+      id: 5
+      author: zyris
+      changes:
+        - addColumn:
+            tableName: user_ration
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+  - changeSet:
+      id: 6
+      author: zyris
+      changes:
+        - createSequence:
+            sequenceName: user_ration_seq
+            startValue: 1
+            incrementBy: 1
